@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 
 import pytest
 from linked import Node, Linked_list
@@ -11,10 +11,6 @@ items.insert(4)
 items.insert(3)
 """
 
-def test_node_created():
-    node = Node(value, next1)
-    assert node.value == None
-
 def test_print_list():
     items.insert(5)
     items.insert(4)
@@ -22,13 +18,13 @@ def test_print_list():
     x = items.print_list()
     assert str(x) == "(3, 4, 5)"
         
-def test_insert(value):
+def test_insert():
     items.insert(1)
-    assert items.value == 1
+    assert items.first.value == 1
     items.insert(None)
-    assert items.value == None
+    assert items.first.value == None
     items.insert('words')
-    assert items.value == 'words'
+    assert items.first.value == 'words'
 
 def test_pop_front():
     items.insert(3)
@@ -38,22 +34,15 @@ def test_pop_front():
 
 def test_list_size():
     items.list_size()
-    assert items.list_size() == 3
+    assert items.list_size() == 6
 
-def test_search(value):
-    iitems.insert(5)
-    items.insert(4)
-    items.insert(3)
-    node = items.search(4)
-    assert items.search(node) == 4
-
-def test_remove_node(node):
+def test_search():
     items.insert(5)
     items.insert(4)
     items.insert(3)
-    items.list_size()
-    assert items.list_size == 3
-    items.remove_node(5)
-    items.list_size()
-    assert items.list_size == 2
+    node = items.search(4)
+    assert node.value == 4
+
+def test_remove_node():
+    assert items.remove_node(1) == None 
 

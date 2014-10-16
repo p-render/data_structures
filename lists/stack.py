@@ -8,6 +8,7 @@ class Stack(object):
 
     def push(self, data):
         self.items.insert(data)
+        #need to fix, to append, not insert (to beginning)
 
     def pop(self):
         return self.items.pop_front()

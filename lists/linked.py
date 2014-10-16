@@ -1,4 +1,4 @@
-#linked.py
+#!/usr/bin/env python
 
 class Node(object):
     """creates a node with a value and connection to the next
