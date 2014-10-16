@@ -1,10 +1,10 @@
-#test_linked.py
+
 
 import pytest
-import linked
+from linked import Node, Linked_list
 
 
-items = linked.Linked_List()
+items = Linked_list()
 """
 items.insert(5)
 items.insert(4)
@@ -12,13 +12,15 @@ items.insert(3)
 """
 
 def test_node_created():
-    #assert value == 
-    #assert self.next == ?
-    pass
+    node = Node(value, next1)
+    assert node.value == None
 
-
-def test_linked_list_created():
-    pass
+def test_print_list():
+    items.insert(5)
+    items.insert(4)
+    items.insert(3)
+    x = items.print_list()
+    assert str(x) == "(3, 4, 5)"
         
 def test_insert(value):
     items.insert(1)
@@ -28,18 +30,15 @@ def test_insert(value):
     items.insert('words')
     assert items.value == 'words'
 
-
 def test_pop_front():
     items.insert(3)
+    items.insert(4)
     items.pop_front()
     assert items.pop_front() == 3
 
 def test_list_size():
-    items.insert(5)
-    items.insert(4)
-    items.insert(3)
     items.list_size()
-    assert items.list_size == 3
+    assert items.list_size() == 3
 
 def test_search(value):
     iitems.insert(5)
@@ -58,10 +57,3 @@ def test_remove_node(node):
     items.list_size()
     assert items.list_size == 2
 
-
-def test_print_list():
-    items.insert(5)
-    items.insert(4)
-    items.insert(3)
-    x = items.test_print_list()
-    assert str(x) == "(3, 4, 5)"
